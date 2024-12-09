@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 95</title>
+</head>
+<body>
+    <h1>Ordenador de Nomes</h1>
+    <form id="nomesForm">
+        <label for="nome1">Digite o nome 1:</label>
+        <input type="text" id="nome1" required><br><br>
+        <label for="nome2">Digite o nome 2:</label>
+        <input type="text" id="nome2" required><br><br>
+        <label for="nome3">Digite o nome 3:</label>
+        <input type="text" id="nome3" required><br><br>
+        <label for="nome4">Digite o nome 4:</label>
+        <input type="text" id="nome4" required><br><br>
+        <label for="nome5">Digite o nome 5:</label>
+        <input type="text" id="nome5" required><br><br>
+        <button type="button" onclick="ordenarNomes()">Ordenar Nomes</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function ordenarNomes() {
+            const nomes = [
+                document.getElementById('nome1').value,
+                document.getElementById('nome2').value,
+                document.getElementById('nome3').value,
+                document.getElementById('nome4').value,
+                document.getElementById('nome5').value
+            ];
+
+            nomes.sort();
+
+            let resultado = 'Nomes em ordem alfabética:<br>';
+            nomes.forEach(nome => {
+                resultado += nome + '<br>';
+            });
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

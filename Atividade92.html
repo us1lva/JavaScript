@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 92</title>
+</head>
+<body>
+    <h1>Ordenador de Números Decrescente</h1>
+    <form id="numerosForm">
+        <label for="numero1">Digite o número 1:</label>
+        <input type="number" id="numero1" required><br><br>
+        <label for="numero2">Digite o número 2:</label>
+        <input type="number" id="numero2" required><br><br>
+        <label for="numero3">Digite o número 3:</label>
+        <input type="number" id="numero3" required><br><br>
+        <label for="numero4">Digite o número 4:</label>
+        <input type="number" id="numero4" required><br><br>
+        <label for="numero5">Digite o número 5:</label>
+        <input type="number" id="numero5" required><br><br>
+        <button type="button" onclick="ordenarNumeros()">Ordenar Números</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function ordenarNumeros() {
+            const numeros = [
+                parseInt(document.getElementById('numero1').value),
+                parseInt(document.getElementById('numero2').value),
+                parseInt(document.getElementById('numero3').value),
+                parseInt(document.getElementById('numero4').value),
+                parseInt(document.getElementById('numero5').value)
+            ];
+
+            numeros.sort((a, b) => b - a);
+
+            let resultado = 'Números em ordem decrescente:<br>';
+            for (let numero of numeros) {
+                resultado += numero + '<br>';
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

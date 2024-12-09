@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 23</title>
+</head>
+<body>
+    <h1>Verificador de Dias do Mês</h1>
+    <form id="mesForm">
+        <label for="mes">Digite o nome do mês:</label>
+        <input type="text" id="mes" required><br><br>
+        <button type="button" onclick="verificarDias()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarDias() {
+            const mes = document.getElementById('mes').value.toLowerCase();
+
+            let dias;
+            switch (mes) {
+                case 'janeiro':
+                case 'março':
+                case 'maio':
+                case 'julho':
+                case 'agosto':
+                case 'outubro':
+                case 'dezembro':
+                    dias = 31;
+                    break;
+                case 'abril':
+                case 'junho':
+                case 'setembro':
+                case 'novembro':
+                    dias = 30;
+                    break;
+                case 'fevereiro':
+                    dias = 28; // Considerando anos não bissextos
+                    break;
+                default:
+                    document.getElementById('resultado').innerHTML = 'Mês inválido.';
+                    return;
+            }
+
+            document.getElementById('resultado').innerHTML = `O mês de ${mes} tem ${dias} dias.`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 62</title>
+</head>
+<body>
+    <h1>Contador de Números Ímpares</h1>
+    <form id="contadorForm">
+        <button type="button" onclick="contarNumeros()">Contar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function contarNumeros() {
+            let numero = 1;
+            let resultado = '';
+            do {
+                if (numero % 2 !== 0) {
+                    resultado += numero + '<br>';
+                }
+                numero++;
+            } while (numero <= 50);
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

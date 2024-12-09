@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+<body>
+    <h1>Calculadora de Dias de Vida</h1>
+    <form id="idadeForm">
+        <label for="anos">Digite a idade em anos:</label>
+        <input type="number" id="anos" required><br><br>
+        <label for="meses">Digite a idade em meses:</label>
+        <input type="number" id="meses" required><br><br>
+        <label for="dias">Digite a idade em dias:</label>
+        <input type="number" id="dias" required><br><br>
+        <button type="button" onclick="calcularDias()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDias() {
+            const anos = parseInt(document.getElementById('anos').value);
+            const meses = parseInt(document.getElementById('meses').value);
+            const dias = parseInt(document.getElementById('dias').value);
+
+            const totalDias = (anos * 365) + (meses * 30) + dias;
+
+            document.getElementById('resultado').innerHTML = `Você tem aproximadamente ${totalDias} dias de vida.`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 53</title>
+</head>
+<body>
+    <h1>Contador de Números Pares</h1>
+    <form id="contadorForm">
+        <button type="button" onclick="contarNumeros()">Contar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function contarNumeros() {
+            let numero = 2;
+            let resultado = '';
+            do {
+                resultado += numero + '<br>';
+                numero += 2;
+            } while (numero <= 50);
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 110</title>
+</head>
+<body>
+    <h1>Subtração de Matrizes 2x2</h1>
+    <form id="matrizForm">
+        <p>Digite os elementos da primeira matriz 2x2:</p>
+        <label for="elemento1_00">Elemento [0][0]:</label>
+        <input type="number" id="elemento1_00" required><br><br>
+        <label for="elemento1_01">Elemento [0][1]:</label>
+        <input type="number" id="elemento1_01" required><br><br>
+        <label for="elemento1_10">Elemento [1][0]:</label>
+        <input type="number" id="elemento1_10" required><br><br>
+        <label for="elemento1_11">Elemento [1][1]:</label>
+        <input type="number" id="elemento1_11" required><br><br>
+        <p>Digite os elementos da segunda matriz 2x2:</p>
+        <label for="elemento2_00">Elemento [0][0]:</label>
+        <input type="number" id="elemento2_00" required><br><br>
+        <label for="elemento2_01">Elemento [0][1]:</label>
+        <input type="number" id="elemento2_01" required><br><br>
+        <label for="elemento2_10">Elemento [1][0]:</label>
+        <input type="number" id="elemento2_10" required><br><br>
+        <label for="elemento2_11">Elemento [1][1]:</label>
+        <input type="number" id="elemento2_11" required><br><br>
+        <button type="button" onclick="subtrairMatrizes()">Subtrair Matrizes</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function subtrairMatrizes() {
+            const matriz1 = [
+                [parseInt(document.getElementById('elemento1_00').value), parseInt(document.getElementById('elemento1_01').value)],
+                [parseInt(document.getElementById('elemento1_10').value), parseInt(document.getElementById('elemento1_11').value)]
+            ];
+
+            const matriz2 = [
+                [parseInt(document.getElementById('elemento2_00').value), parseInt(document.getElementById('elemento2_01').value)],
+                [parseInt(document.getElementById('elemento2_10').value), parseInt(document.getElementById('elemento2_11').value)]
+            ];
+
+            const subtracaoMatriz = [
+                [matriz1[0][0] - matriz2[0][0], matriz1[0][1] - matriz2[0][1]],
+                [matriz1[1][0] - matriz2[1][0], matriz1[1][1] - matriz2[1][1]]
+            ];
+
+            let resultado = 'A subtração das duas matrizes 2x2 é:<br>';
+            for (let i = 0; i < 2; i++) {
+                for (let j = 0; j < 2; j++) {
+                    resultado += subtracaoMatriz[i][j] + ' ';
+                }
+                resultado += '<br>';
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

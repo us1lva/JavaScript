@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 27</title>
+</head>
+<body>
+    <h1>Verificador de Aposentadoria</h1>
+    <form id="aposentadoriaForm">
+        <label for="idade">Digite a idade:</label>
+        <input type="number" id="idade" required><br><br>
+        <label for="sexo">Digite o sexo (M ou F):</label>
+        <input type="text" id="sexo" required><br><br>
+        <button type="button" onclick="verificarAposentadoria()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAposentadoria() {
+            const idade = parseInt(document.getElementById('idade').value);
+            const sexo = document.getElementById('sexo').value.toUpperCase();
+
+            let podeAposentar = false;
+
+            if (sexo === 'M') {
+                if (idade >= 65) {
+                    podeAposentar = true;
+                }
+            } else if (sexo === 'F') {
+                if (idade >= 60) {
+                    podeAposentar = true;
+                }
+            } else {
+                document.getElementById('resultado').innerHTML = 'Sexo inválido.';
+                return;
+            }
+
+            if (podeAposentar) {
+                document.getElementById('resultado').innerHTML = 'Você pode se aposentar.';
+            } else {
+                document.getElementById('resultado').innerHTML = 'Você não pode se aposentar ainda.';
+            }
+        }
+    </script>
+</body>
+</html>

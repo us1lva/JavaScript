@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 103</title>
+</head>
+<body>
+    <h1>Matriz 3x3</h1>
+    <form id="matrizForm">
+        <p>Digite os elementos da matriz 3x3:</p>
+        <label for="elemento00">Elemento [0][0]:</label>
+        <input type="number" id="elemento00" required><br><br>
+        <label for="elemento01">Elemento [0][1]:</label>
+        <input type="number" id="elemento01" required><br><br>
+        <label for="elemento02">Elemento [0][2]:</label>
+        <input type="number" id="elemento02" required><br><br>
+        <label for="elemento10">Elemento [1][0]:</label>
+        <input type="number" id="elemento10" required><br><br>
+        <label for="elemento11">Elemento [1][1]:</label>
+        <input type="number" id="elemento11" required><br><br>
+        <label for="elemento12">Elemento [1][2]:</label>
+        <input type="number" id="elemento12" required><br><br>
+        <label for="elemento20">Elemento [2][0]:</label>
+        <input type="number" id="elemento20" required><br><br>
+        <label for="elemento21">Elemento [2][1]:</label>
+        <input type="number" id="elemento21" required><br><br>
+        <label for="elemento22">Elemento [2][2]:</label>
+        <input type="number" id="elemento22" required><br><br>
+        <button type="button" onclick="mostrarMatriz()">Mostrar Matriz</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarMatriz() {
+            const matriz = [
+                [parseInt(document.getElementById('elemento00').value), parseInt(document.getElementById('elemento01').value), parseInt(document.getElementById('elemento02').value)],
+                [parseInt(document.getElementById('elemento10').value), parseInt(document.getElementById('elemento11').value), parseInt(document.getElementById('elemento12').value)],
+                [parseInt(document.getElementById('elemento20').value), parseInt(document.getElementById('elemento21').value), parseInt(document.getElementById('elemento22').value)]
+            ];
+
+            let menorValor = Number.MAX_VALUE;
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if (matriz[i][j] < menorValor) {
+                        menorValor = matriz[i][j];
+                    }
+                }
+            }
+
+            let resultado = 'Matriz 3x3:<br>';
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    resultado += matriz[i][j] + ' ';
+                }
+                resultado += '<br>';
+            }
+            resultado += `O menor valor presente na matriz é: ${menorValor}`;
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

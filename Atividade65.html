@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 65</title>
+</head>
+<body>
+    <h1>Calculadora de Média de Idades</h1>
+    <form id="idadeForm">
+        <label for="nome">Digite o nome da pessoa (ou 'fim' para encerrar):</label>
+        <input type="text" id="nome" required><br><br>
+        <label for="idade">Digite a idade da pessoa:</label>
+        <input type="number" id="idade" required><br><br>
+        <button type="button" onclick="adicionarPessoa()">Adicionar Pessoa</button>
+        <button type="button" onclick="calcularMedia()">Calcular Média</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        let somaIdades = 0;
+        let contador = 0;
+
+        function adicionarPessoa() {
+            const nome = document.getElementById('nome').value;
+            const idade = parseInt(document.getElementById('idade').value);
+
+            if (nome.toLowerCase() === 'fim') {
+                calcularMedia();
+                return;
+            }
+
+            somaIdades += idade;
+            contador++;
+
+            document.getElementById('nome').value = '';
+            document.getElementById('idade').value = '';
+        }
+
+        function calcularMedia() {
+            if (contador > 0) {
+                const media = somaIdades / contador;
+                document.getElementById('resultado').innerHTML = `A média das idades é: ${media.toFixed(2)}`;
+            } else {
+                document.getElementById('resultado').innerHTML = 'Nenhuma idade foi informada.';
+            }
+        }
+    </script>
+</body>
+</html>

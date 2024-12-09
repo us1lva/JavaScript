@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 33</title>
+</head>
+<body>
+    <h1>Saudação de Turno</h1>
+    <form id="turnoForm">
+        <label for="nome">Digite o nome do aluno:</label>
+        <input type="text" id="nome" required><br><br>
+        <label for="turno">Digite o turno (M para Matutino, V para Vespertino):</label>
+        <input type="text" id="turno" required><br><br>
+        <button type="button" onclick="saudar()">Saudar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function saudar() {
+            const nome = document.getElementById('nome').value;
+            const turno = document.getElementById('turno').value.toUpperCase();
+
+            let saudacao;
+            if (turno === 'M') {
+                saudacao = `Bom dia, ${nome}`;
+            } else if (turno === 'V') {
+                saudacao = `Boa tarde, ${nome}`;
+            } else {
+                saudacao = 'Turno inválido.';
+            }
+
+            document.getElementById('resultado').innerHTML = saudacao;
+        }
+    </script>
+</body>
+</html>

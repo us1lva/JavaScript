@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 56</title>
+</head>
+<body>
+    <h1>Verificador de Divisores</h1>
+    <form id="divisoresForm">
+        <label for="numero">Digite um número inteiro positivo:</label>
+        <input type="number" id="numero" required><br><br>
+        <button type="button" onclick="verificarDivisores()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarDivisores() {
+            const numero = parseInt(document.getElementById('numero').value);
+
+            if (numero <= 0) {
+                document.getElementById('resultado').innerHTML = 'Número inválido. Por favor, digite um número inteiro positivo.';
+            } else {
+                let resultado = `Os divisores de ${numero} são:<br>`;
+                let divisor = 1;
+                do {
+                    if (numero % divisor === 0) {
+                        resultado += `${divisor}<br>`;
+                    }
+                    divisor++;
+                } while (divisor <= numero);
+                document.getElementById('resultado').innerHTML = resultado;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <h1>Calculadora de Médias</h1>
+    <form id="gradeForm">
+        <label for="nota1">Digite a primeira nota:</label>
+        <input type="number" id="nota1" step="0.01" required><br><br>
+        <label for="nota2">Digite a segunda nota:</label>
+        <input type="number" id="nota2" step="0.01" required><br><br>
+        <label for="nota3">Digite a terceira nota:</label>
+        <input type="number" id="nota3" step="0.01" required><br><br>
+        <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            const n1 = parseFloat(document.getElementById('nota1').value);
+            const n2 = parseFloat(document.getElementById('nota2').value);
+            const n3 = parseFloat(document.getElementById('nota3').value);
+
+            const media = (n1 + n2 + n3) / 3;
+            const ponderada = (2 * n1 + 3 * n2 + 5 * n3) / (2 + 3 + 5);
+
+            const resultado = `
+                A média das notas: ${n1}, ${n2}, ${n3} = ${media.toFixed(2)}<br>
+                A ponderada: ${ponderada.toFixed(2)}
+            `;
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

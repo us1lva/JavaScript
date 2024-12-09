@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 54</title>
+</head>
+<body>
+    <h1>Calculadora de Média Aritmética</h1>
+    <form id="mediaForm">
+        <label for="numero1">Digite o primeiro número:</label>
+        <input type="number" id="numero1" required><br><br>
+        <label for="numero2">Digite o segundo número:</label>
+        <input type="number" id="numero2" required><br><br>
+        <label for="numero3">Digite o terceiro número:</label>
+        <input type="number" id="numero3" required><br><br>
+        <label for="numero4">Digite o quarto número:</label>
+        <input type="number" id="numero4" required><br><br>
+        <label for="numero5">Digite o quinto número:</label>
+        <input type="number" id="numero5" required><br><br>
+        <button type="button" onclick="calcularMedia()">Calcular Média</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia() {
+            const numeros = [
+                parseInt(document.getElementById('numero1').value),
+                parseInt(document.getElementById('numero2').value),
+                parseInt(document.getElementById('numero3').value),
+                parseInt(document.getElementById('numero4').value),
+                parseInt(document.getElementById('numero5').value)
+            ];
+
+            const soma = numeros.reduce((acc, num) => acc + num, 0);
+            const media = soma / numeros.length;
+
+            document.getElementById('resultado').innerHTML = `A média aritmética dos valores lidos é: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

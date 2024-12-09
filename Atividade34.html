@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 34</title>
+</head>
+<body>
+    <h1>Verificador de Obrigatoriedade de Voto</h1>
+    <form id="votoForm">
+        <label for="idade">Digite a sua idade:</label>
+        <input type="number" id="idade" required><br><br>
+        <button type="button" onclick="verificarVoto()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarVoto() {
+            const idade = parseInt(document.getElementById('idade').value);
+
+            let resultado;
+            if (idade >= 18 && idade <= 69) {
+                resultado = 'Seu voto é obrigatório!!!';
+            } else if (idade <= 17) {
+                resultado = 'Seu voto não é obrigatório!!!';
+            } else if (idade >= 70) {
+                resultado = 'Seu voto não é obrigatório!!!';
+            } else {
+                resultado = 'Não pode votar';
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

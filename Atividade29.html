@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 29</title>
+</head>
+<body>
+    <h1>Verificador de Aprovação</h1>
+    <form id="aprovacaoForm">
+        <label for="nome">Digite o nome do aluno:</label>
+        <input type="text" id="nome" required><br><br>
+        <label for="nota">Digite a nota do aluno:</label>
+        <input type="number" id="nota" step="0.01" required><br><br>
+        <button type="button" onclick="verificarAprovacao()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarAprovacao() {
+            const nome = document.getElementById('nome').value;
+            const nota = parseFloat(document.getElementById('nota').value);
+
+            let resultado;
+            if (nota >= 7) {
+                resultado = `O aluno ${nome} está aprovado.`;
+            } else {
+                resultado = `O aluno ${nome} está em recuperação.`;
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

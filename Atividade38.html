@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 38</title>
+</head>
+<body>
+    <h1>Contador de Números Pares</h1>
+    <form id="contadorForm">
+        <button type="button" onclick="contarNumeros()">Contar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function contarNumeros() {
+            let resultado = '';
+            for (let numero = 2; numero <= 50; numero += 2) {
+                resultado += numero + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

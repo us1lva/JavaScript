@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 77</title>
+</head>
+<body>
+    <h1>Contador de Números Ímpares Decrescente</h1>
+    <form id="contadorForm">
+        <button type="button" onclick="contarNumeros()">Contar</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function contarNumeros() {
+            let resultado = '';
+            for (let i = 49; i >= 1; i -= 2) {
+                resultado += i + '<br>';
+            }
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

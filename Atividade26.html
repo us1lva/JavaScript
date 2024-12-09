@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 26</title>
+</head>
+<body>
+    <h1>Calculadora de Preço de Produtos</h1>
+    <form id="produtoForm">
+        <label for="codigoProduto">Digite o código do produto (1, 2 ou 3):</label>
+        <input type="number" id="codigoProduto" required><br><br>
+        <label for="quantidade">Digite a quantidade comprada:</label>
+        <input type="number" id="quantidade" required><br><br>
+        <button type="button" onclick="calcularPreco()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPreco() {
+            const precoProduto1 = 10.0;
+            const precoProduto2 = 20.0;
+            const precoProduto3 = 30.0;
+
+            const codigoProduto = parseInt(document.getElementById('codigoProduto').value);
+            const quantidade = parseInt(document.getElementById('quantidade').value);
+
+            let valorTotal = 0;
+
+            switch (codigoProduto) {
+                case 1:
+                    valorTotal = precoProduto1 * quantidade;
+                    break;
+                case 2:
+                    valorTotal = precoProduto2 * quantidade;
+                    break;
+                case 3:
+                    valorTotal = precoProduto3 * quantidade;
+                    break;
+                default:
+                    document.getElementById('resultado').innerHTML = 'Código de produto inválido.';
+                    return;
+            }
+
+            document.getElementById('resultado').innerHTML = `O valor total a ser pago é: R$ ${valorTotal.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

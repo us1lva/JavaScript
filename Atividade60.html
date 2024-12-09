@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 60</title>
+</head>
+<body>
+    <h1>Sequência de Fibonacci</h1>
+    <form id="fibonacciForm">
+        <button type="button" onclick="gerarFibonacci()">Gerar Sequência</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function gerarFibonacci() {
+            let a = 0, b = 1;
+            let resultado = `Sequência de Fibonacci: ${a} ${b}`;
+
+            let contador = 1;
+            do {
+                const proximo = a + b;
+                resultado += ` ${proximo}`;
+                a = b;
+                b = proximo;
+                contador++;
+            } while (contador < 19);
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

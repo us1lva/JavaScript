@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 21</title>
+</head>
+<body>
+    <h1>Contador de Idades</h1>
+    <form id="idadeForm">
+        <label for="numeroDePessoas">Digite o número de pessoas no grupo:</label>
+        <input type="number" id="numeroDePessoas" required><br><br>
+        <div id="idadeInputs"></div>
+        <button type="button" onclick="adicionarCampos()">Adicionar Campos</button><br><br>
+        <button type="button" onclick="contarIdades()">Contar Idades</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function adicionarCampos() {
+            const numeroDePessoas = parseInt(document.getElementById('numeroDePessoas').value);
+            const idadeInputs = document.getElementById('idadeInputs');
+            idadeInputs.innerHTML = '';
+
+            for (let i = 0; i < numeroDePessoas; i++) {
+                idadeInputs.innerHTML += `Digite a idade da pessoa ${i + 1}: <input type="number" class="idade" required><br><br>`;
+            }
+        }
+
+        function contarIdades() {
+            const idades = document.getElementsByClassName('idade');
+            let menoresDeIdade = 0;
+            let maioresDeIdade = 0;
+
+            for (let i = 0; i < idades.length; i++) {
+                const idade = parseInt(idades[i].value);
+
+                if (idade < 18) {
+                    menoresDeIdade++;
+                } else {
+                    maioresDeIdade++;
+                }
+            }
+
+            document.getElementById('resultado').innerHTML = `Número de menores de idade: ${menoresDeIdade}<br>Número de maiores de idade: ${maioresDeIdade}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 74</title>
+</head>
+<body>
+    <h1>Calculadora de Média de Idades</h1>
+    <form id="idadeForm">
+        <label for="nome1">Digite o nome da pessoa 1:</label>
+        <input type="text" id="nome1" required><br><br>
+        <label for="idade1">Digite a idade da pessoa 1:</label>
+        <input type="number" id="idade1" required><br><br>
+        <label for="nome2">Digite o nome da pessoa 2:</label>
+        <input type="text" id="nome2" required><br><br>
+        <label for="idade2">Digite a idade da pessoa 2:</label>
+        <input type="number" id="idade2" required><br><br>
+        <label for="nome3">Digite o nome da pessoa 3:</label>
+        <input type="text" id="nome3" required><br><br>
+        <label for="idade3">Digite a idade da pessoa 3:</label>
+        <input type="number" id="idade3" required><br><br>
+        <label for="nome4">Digite o nome da pessoa 4:</label>
+        <input type="text" id="nome4" required><br><br>
+        <label for="idade4">Digite a idade da pessoa 4:</label>
+        <input type="number" id="idade4" required><br><br>
+        <label for="nome5">Digite o nome da pessoa 5:</label>
+        <input type="text" id="nome5" required><br><br>
+        <label for="idade5">Digite a idade da pessoa 5:</label>
+        <input type="number" id="idade5" required><br><br>
+        <button type="button" onclick="calcularMedia()">Calcular Média</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularMedia() {
+            const idades = [
+                parseInt(document.getElementById('idade1').value),
+                parseInt(document.getElementById('idade2').value),
+                parseInt(document.getElementById('idade3').value),
+                parseInt(document.getElementById('idade4').value),
+                parseInt(document.getElementById('idade5').value)
+            ];
+
+            const somaIdades = idades.reduce((acc, idade) => acc + idade, 0);
+            const media = somaIdades / idades.length;
+
+            document.getElementById('resultado').innerHTML = `A média das idades é: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
